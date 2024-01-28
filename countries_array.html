@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-2" id="output">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script>
+            const countries = [
+                {
+                    countryName: "United States",
+                    currency: "US Dollar",
+                    capital: "Washington D.C.",
+                    flagPhoto: "https://flagcdn.com/us.svg"
+                },
+                {
+                    countryName: "Canada",
+                    currency: "Canadian Dollar",
+                    capital: "Ottawa",
+                    flagPhoto: "https://flagcdn.com/ca.svg"
+                },
+                {
+                    countryName: "Japan",
+                    currency: "Japanese Yen",
+                    capital: "Tokyo",
+                    flagPhoto: "https://flagcdn.com/jp.svg"
+                },
+                {
+                    countryName: "China",
+                    currency: "Renminbi",
+                    capital: "Beijing",
+                    flagPhoto: "https://flagcdn.com/cn.svg"
+                },
+                {
+                    countryName: "Australia",
+                    currency: "Australian Dollar",
+                    capital: "Canberra",
+                    flagPhoto: "https://flagcdn.com/au.svg"
+                },
+                {
+                    countryName: "Germany",
+                    currency: "Euro",
+                    capital: "Berlin",
+                    flagPhoto: "https://flagcdn.com/de.svg"
+                },
+                {
+                    countryName: "Brazil",
+                    currency: "Brazilian Real",
+                    capital: "Brasília",
+                    flagPhoto: "https://flagcdn.com/br.svg"
+                },
+                // Add more countries as needed
+            ];
+
+            console.log(countries);
+
+            countries.map(function(item){
+                let design = ` <div class="col-lg-3 co-md-4 col-sm-6 col-12 mb-3">
+                <div class="card shadow">
+                    <img src=${item.flagPhoto} class="card-img-top" />
+
+                    <div class="card-body">
+                        <h2>${item.countryName}</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">${item.capital}</li>
+                            <li class="list-group-item">${item.currency}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>`;
+                document.getElementById('output').innerHTML += design;
+            })
+        </script>
+</body>
+
+</html>
