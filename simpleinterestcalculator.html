@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap JS (optional, if you want to use Bootstrap JavaScript features) -->
+  <!-- Note: Bootstrap 5 requires Popper.js for some features -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row d-flex min-vh-100 align-items-center justify-content-center">
+      <div class="col-12 col-lg-6 col-xl-6 col-sm-8">
+        <div class="card shadow">
+          <div class="card-header text-bg-primary">
+            <h2 class="text-center">Simple Interest Calculator</h2>
+          </div>
+          <div class="card-body">
+            <form onsubmit="return false;">
+              <div class="row mb-3">
+                <label for="amount" class="col-sm-3 col-form-label"><strong>Amount:</strong></label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="amount">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="rate" class="col-sm-3 col-form-label"><strong>Rate:</strong></label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="rate">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="years" class="col-sm-3 col-form-label"><strong>Years:</strong></label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="years">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-9 offset-sm-3">
+                  <button type="button" class="btn btn-primary" onclick="calculateInterest()">Calculate</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-center text-bg-primary" id="resultFooter"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JavaScript (if you want to use Bootstrap JavaScript features) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+
+  <!-- Your existing JavaScript code goes here -->
+  <script>
+    function calculateInterest() {
+      var amount = document.getElementById('amount').value;
+      var rate = document.getElementById('rate').value;
+      var years = document.getElementById('years').value;
+
+      var simpleInterest = (amount * rate * years) / 100;
+
+      document.getElementById('resultFooter').innerHTML = "Simple Interest: " + simpleInterest;
+    }
+  </script>
+</body>
+</html>
