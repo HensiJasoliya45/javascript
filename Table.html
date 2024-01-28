@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table Generator</title>
+  <!-- Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h1 class="card-title">Multiplication Table Generator</h1>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="start" class="form-label">Start Number:</label>
+            <input type="number" class="form-control" id="start" name="start" required>
+          </div>
+          <div class="mb-3">
+            <label for="stop" class="form-label">Stop Number:</label>
+            <input type="number" class="form-control" id="stop" name="stop" required>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="generateTable()">Generate Table</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function generateTable() {
+      const start = parseInt(document.getElementById('start').value);
+      const stop = parseInt(document.getElementById('stop').value);
+
+      if (isNaN(start) || isNaN(stop)) {
+        alert("Please enter valid numbers");
+        return;
+      }
+
+      let tableHTML = '<table class="table table-bordered"><thead><tr><th scope="col">Number</th><th scope="col">Multiplication</th></tr></thead><tbody>';
+
+      for (let i = start; i <= stop; i++) {
+        for (let j = 1; j <= 10; j++) {
+          tableHTML += `<tr><td>${i}</td><td>${i} x ${j} = ${i * j}</td></tr>`;
+        }
+      }
+
+      tableHTML += '</tbody></table>';
+      document.querySelector('.card-body').innerHTML = tableHTML;
+    }
+  </script>
+</body>
+
+</html>
